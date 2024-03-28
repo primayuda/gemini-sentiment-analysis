@@ -24,7 +24,7 @@ export default function Form() {
         
         <label htmlFor="message">
             Enter your text
-          <textarea id="message" name="message" autoComplete="off" />
+          <textarea id="message" name="message" autoComplete="off" cols={33} rows={3} placeholder="Saya senang belajar data analytics" />
         </label>
         <br />
         <button className="mt-2 rounded-md bg-gradient-to-r from-purple-300 to-purple-400 px-4 py-3 font-semibold text-white shadow-lg mb-4">Analyze</button>
