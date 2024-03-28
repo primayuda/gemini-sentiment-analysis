@@ -11,30 +11,23 @@ export default function Form() {
       body: formData,
     });
     const data = await response.json();
-    if (data.message) {
-      setResponseMessage(data.message);
+    if (data.sentimentResult) {
+      // console.log(data);
+      setResponseMessage(data.sentimentResult);
     }
   }
 
   return (
     <form onSubmit={submit}>
-      <div className="grid min-h-screen place-items-center p-4">
+      <div>
         <div className="w-md">
-        <label htmlFor="name">
-            Name
-          <input type="text" id="name" name="name" autoComplete="name" />
-        </label>
-        <br/>
-        <label htmlFor="email">
-            Email
-          <input type="email" id="email" name="email" autoComplete="email" required />
-        </label>
-        <br />
+        
         <label htmlFor="message">
-            Message
+            Enter your text
           <textarea id="message" name="message" autoComplete="off" />
         </label>
-        <button className="mt-2 w-full rounded-md bg-gradient-to-r from-purple-300 to-purple-400 px-4 py-3 font-semibold text-white shadow-lg mb-4">Send</button>
+        <br />
+        <button className="mt-2 rounded-md bg-gradient-to-r from-purple-300 to-purple-400 px-4 py-3 font-semibold text-white shadow-lg mb-4">Analyze</button>
         {responseMessage && <p>{responseMessage}</p>}
         </div>
       </div>
